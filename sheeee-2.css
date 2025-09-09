@@ -369,29 +369,26 @@ h2:hover {
 .fav-front img, .fav-back img { 
   width:100%; height:100%; object-fit:cover; 
 }
-.fav-back { transform: rotateY(180deg); position: relative; }
-
-/* Music card specific audio styling */
-.fav-flip.music .fav-back audio {
-  width: 90%;      /* smaller player width */
-  height: 30px;    /* compact height */
-  margin: auto;
-  display: block;
+.fav-back {
+  transform: rotateY(180deg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* keep text at bottom */
+  padding: 10px; /* add padding for audio */
 }
 
 .fav-text {
-  position: absolute;
-  bottom: 10px; /* move text to bottom */
-  left: 10px;
-  transform: none; /* remove centering */
-  background: rgba(0,0,0,0.55);
-  color:#fff;
-  font-weight: 500;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 12px; /* smaller text */
-  text-align: left;
-  max-width: 85%;
+  position: static; /* let it flow normally */
+  background: none; /* optional */
+  color: #fff;
+  max-width: 100%;
+  padding: 0;
+}
+
+.fav-back audio {
+  width: 100%; /* make the audio player fit */
+  margin-top: 10px;
 }
 
 /* ===== Class Schedule Section ===== */
@@ -791,4 +788,5 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
