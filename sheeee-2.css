@@ -465,9 +465,27 @@ h2:hover {
 .projects-section {
   background: url("aboutbackground.jpg") no-repeat center center/cover;
   padding: 4rem 2rem;
+  position: relative;
   color: var(--text);
   text-align: center;
 }
+
+.projects-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(230, 210, 255, 0.2); /* same overlay as About Section */
+  z-index: 0;
+}
+
+.projects-section h2,
+.project-boxes {
+  position: relative;
+  z-index: 1; /* ensure content appears above overlay */
+}
+
 
 .projects-section h2 {
   font-family: "Times New Roman", serif;
@@ -780,6 +798,7 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
 
 
