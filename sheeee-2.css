@@ -390,8 +390,8 @@ h2:hover {
 }
 
 .fav-back audio {
-  width: 100%;     /* make audio fit card width */
-  height: 35px;    /* fixed height for consistency */
+  width: 100%;
+  height: 35px;
   display: block;
 }
 
@@ -793,5 +793,6 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
 
