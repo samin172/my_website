@@ -314,7 +314,7 @@ h2:hover {
     "img3 youtube img4"
     "img5 music img6";
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 160px 160px 180px; /* taller row for music */
+  grid-template-rows: 160px 160px 140px;
   gap: 15px;
   width: 95%;
   max-width: 950px;
@@ -328,15 +328,7 @@ h2:hover {
 .img3 { grid-area: img3; } 
 .img4 { grid-area: img4; }
 .youtube { grid-area: youtube; }
-
-.music { 
-  grid-area: music;
-  justify-self: center; /* center horizontally */
-  align-self: center;   /* center vertically in the cell */
-  width: 90%;           /* make rectangle wider */
-  height: 70px;         /* music card height */
-}
-
+.music { grid-area: music; }
 .img5 { grid-area: img5; }
 .img6 { grid-area: img6; }
 
@@ -373,29 +365,21 @@ h2:hover {
 .fav-front img, .fav-back img { 
   width:100%; height:100%; object-fit:cover; 
 }
-
-.fav-back {
-  transform: rotateY(180deg);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* keep text/audio at bottom */
-  padding: 10px; /* padding inside back */
-}
+.fav-back { transform: rotateY(180deg); position: relative; }
 
 .fav-text {
-  position: static; /* let it flow normally */
-  background: none; /* optional */
-  color: #fff;
-  max-width: 100%;
-  padding: 0;
-}
-
-.fav-back audio {
-  width: 100%; /* fill the music card */
-  height: 40px; /* standard audio player height */
-  margin-top: 5px;
-  border-radius: 5px;
+  position: absolute;
+  bottom: 10px; /* move text to bottom */
+  left: 10px;
+  transform: none; /* remove centering */
+  background: rgba(0,0,0,0.55);
+  color:#fff;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px; /* smaller text */
+  text-align: left;
+  max-width: 85%;
 }
 
 /* ===== Class Schedule Section ===== */
@@ -795,6 +779,7 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
 
 
