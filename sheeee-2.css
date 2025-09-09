@@ -311,17 +311,17 @@ h2:hover {
 .fav-gallery {
   display: grid;
   grid-template-areas:
-    "img1 youtube img2"
-    "img3 youtube img4"
-    "img5 music img6";
+    "img1 video img2"
+    "img3 video img4"
+    "music music music"; /* removed img5 and img6 */
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 160px 160px 140px;
+  grid-template-rows: auto auto auto; /* auto row heights */
   gap: 15px;
   width: 95%;
   max-width: 950px;
-  background: #d7b8f3; /* pastel purple container */
+  background: #d7b8f3;
   padding: 20px;
-  border-radius: 0px; /* sharp corners */
+  border-radius: 0px;
 }
 
 .img1 { grid-area: img1; } 
@@ -780,6 +780,7 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
 
 
