@@ -319,9 +319,9 @@ h2:hover {
   gap: 15px;
   width: 95%;
   max-width: 950px;
-  background: #d7b8f3;
+  background: #d7b8f3; /* pastel purple container */
   padding: 20px;
-  border-radius: 0px;
+  border-radius: 0px; /* sharp corners */
 }
 
 .img1 { grid-area: img1; } 
@@ -329,13 +329,7 @@ h2:hover {
 .img3 { grid-area: img3; } 
 .img4 { grid-area: img4; }
 .youtube { grid-area: youtube; }
-.music { 
-  grid-area: music;
-  justify-self: center;
-  align-self: center;
-  width: 90%;
-  height: 70px;
-}
+.music { grid-area: music; }
 .img5 { grid-area: img5; }
 .img6 { grid-area: img6; }
 
@@ -343,8 +337,8 @@ h2:hover {
   perspective: 1000px;
   width: 100%; 
   height: 100%;
-  border-radius: 0px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.8);
+  border-radius: 0px; /* sharp edges */
+  box-shadow: 0 0 20px rgba(255,255,255,0.8); /* glow white */
   transition: transform 0.4s ease, box-shadow 0.3s ease;
 }
 .fav-flip:hover { 
@@ -354,8 +348,7 @@ h2:hover {
 
 .fav-flip-inner {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   transition: transform 0.8s ease;
   transform-style: preserve-3d;
 }
@@ -363,68 +356,33 @@ h2:hover {
 
 .fav-front, .fav-back {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 0px;
+  width: 100%; height: 100%;
+  border-radius: 0px; /* sharp edges */
   overflow: hidden;
   backface-visibility: hidden;
   background: var(--card);
 }
 
 .fav-front img, .fav-back img { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover;
-  display: block;
+  width:100%; height:100%; object-fit:cover; 
 }
+.fav-back { transform: rotateY(180deg); position: relative; }
 
-/* Back side layout */
-.fav-back {
-  transform: rotateY(180deg);
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 0px;
-}
-.fav-back .fav-back-img {
+.fav-text {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.fav-back .fav-back-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Full image remains, text and audio at bottom */
-.fav-back .fav-text {
-  position: absolute; /* over image */
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  bottom: 10px; /* move text to bottom */
+  left: 10px;
+  transform: none; /* remove centering */
   background: rgba(0,0,0,0.55);
-  color: #fff;
+  color:#fff;
   font-weight: 500;
   padding: 6px 10px;
-  font-size: 12px;
-  border-radius: 0 0 6px 6px;
-  text-align: center;
+  border-radius: 6px;
+  font-size: 12px; /* smaller text */
+  text-align: left;
+  max-width: 85%;
 }
 
-/* Audio player inside back */
-.fav-back audio {
-  position: absolute;
-  bottom: 30px; /* slightly above bottom */
-  left: 5%;
-  width: 90%;
-  height: 35px;
-  border-radius: 5px;
-}
 /* ===== Class Schedule Section ===== */
 .class-schedules { background: url("aboutbackground.jpg") no-repeat center center/cover; padding: 4rem 2rem; color: var(--text); }
 .schedule-container {
@@ -822,6 +780,7 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
 
 
