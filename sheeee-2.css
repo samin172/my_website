@@ -302,10 +302,11 @@ h2:hover {
 .favorites {
   position: relative;
   background: url('favorites_contact_bg.jpg') no-repeat center center/cover;
-  padding: 5rem 2rem;
+  padding: 2rem 2rem; /* reduced vertical padding */
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: auto; /* allow section to shrink */
 }
 
 .fav-gallery {
@@ -313,15 +314,15 @@ h2:hover {
   grid-template-areas:
     "img1 video img2"
     "img3 video img4"
-    "music music music"; /* removed img5 and img6 */
+    "music music music";
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: auto auto auto; /* auto row heights */
-  gap: 15px;
+  grid-template-rows: 180px 180px 120px; /* fixed, smaller heights */
+  gap: 10px; /* smaller gap */
   width: 95%;
   max-width: 950px;
   background: #d7b8f3;
-  padding: 20px;
-  border-radius: 0px;
+  padding: 15px; /* slightly smaller padding */
+  border-radius: 10px;
 }
 
 .img1 { grid-area: img1; } 
@@ -337,48 +338,59 @@ h2:hover {
   perspective: 1000px;
   width: 100%; 
   height: 100%;
-  border-radius: 0px; /* sharp edges */
-  box-shadow: 0 0 20px rgba(255,255,255,0.8); /* glow white */
-  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  border-radius: 0px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.7); /* slightly smaller glow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .fav-flip:hover { 
   transform: scale(1.05); 
-  box-shadow: 0 0 30px rgba(255,255,255,1); 
+  box-shadow: 0 0 25px rgba(255,255,255,1); 
 }
 
 .fav-flip-inner {
   position: relative;
-  width: 100%; height: 100%;
-  transition: transform 0.8s ease;
+  width: 100%; 
+  height: 100%;
+  transition: transform 0.6s ease;
   transform-style: preserve-3d;
 }
-.fav-flip:hover .fav-flip-inner { transform: rotateY(180deg); }
+
+.fav-flip:hover .fav-flip-inner { 
+  transform: rotateY(180deg); 
+}
 
 .fav-front, .fav-back {
   position: absolute;
-  width: 100%; height: 100%;
-  border-radius: 0px; /* sharp edges */
+  width: 100%; 
+  height: 100%;
+  border-radius: 0px;
   overflow: hidden;
   backface-visibility: hidden;
   background: var(--card);
 }
 
 .fav-front img, .fav-back img { 
-  width:100%; height:100%; object-fit:cover; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
 }
-.fav-back { transform: rotateY(180deg); position: relative; }
+
+.fav-back { 
+  transform: rotateY(180deg); 
+  position: relative; 
+}
 
 .fav-text {
   position: absolute;
-  bottom: 10px; /* move text to bottom */
-  left: 10px;
-  transform: none; /* remove centering */
+  bottom: 8px; /* slightly closer to bottom */
+  left: 8px;
   background: rgba(0,0,0,0.55);
-  color:#fff;
+  color: #fff;
   font-weight: 500;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 12px; /* smaller text */
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 11px; /* smaller text */
   text-align: left;
   max-width: 85%;
 }
@@ -463,7 +475,7 @@ h2:hover {
 
 /* ===== Projects Section ===== */
 .projects-section {
-  background: url("aboutbackground.jpg") no-repeat center center/cover;
+  background: url("favorites_contact_bg.jpg") no-repeat center center/cover;
   padding: 4rem 2rem;
   position: relative;
   text-align: center;
@@ -638,7 +650,7 @@ h2:hover {
 /* 🌸 Contact Section */
 .contact-section {
   padding: 4rem 2rem;
-  background: url("favorites_contact_bg.jpg") no-repeat center center/cover;
+  background: url("aboutbackground.jpg") no-repeat center center/cover;
   position: relative;
   text-align: center;
 }
@@ -798,6 +810,7 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
 
 
