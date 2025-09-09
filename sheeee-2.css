@@ -466,8 +466,8 @@ h2:hover {
   background: url("aboutbackground.jpg") no-repeat center center/cover;
   padding: 4rem 2rem;
   position: relative;
-  color: var(--text);
   text-align: center;
+  color: var(--text);
 }
 
 .projects-section::before {
@@ -798,6 +798,7 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
 
 
