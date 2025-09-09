@@ -382,32 +382,49 @@ h2:hover {
 .fav-back {
   transform: rotateY(180deg);
   position: relative;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0px;
+}
+.fav-back .fav-back-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fav-back .fav-back-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Full image remains, text and audio at bottom */
 .fav-back .fav-text {
-  position: relative; /* let it flow */
+  position: absolute; /* over image */
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background: rgba(0,0,0,0.55);
   color: #fff;
   font-weight: 500;
   padding: 6px 10px;
-  border-radius: 0 0 6px 6px;
   font-size: 12px;
+  border-radius: 0 0 6px 6px;
   text-align: center;
-  margin-top: auto; /* push it to bottom */
-  width: 100%;
 }
 
 /* Audio player inside back */
 .fav-back audio {
-  width: 100%;
+  position: absolute;
+  bottom: 30px; /* slightly above bottom */
+  left: 5%;
+  width: 90%;
   height: 35px;
-  margin-top: 5px;
   border-radius: 5px;
 }
-
 /* ===== Class Schedule Section ===== */
 .class-schedules { background: url("aboutbackground.jpg") no-repeat center center/cover; padding: 4rem 2rem; color: var(--text); }
 .schedule-container {
@@ -805,6 +822,7 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
 
 
