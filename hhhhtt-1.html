@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Jessamine's Website</title> 
+
+  <!-- Boxicons library para sa icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+
+  <!-- Google Fonts para sa headings and logo -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sheeee-2.css">
+</head>
+<body>
+
+  <!-- Scroll-up button -->
+  <div class="scroll-up-btn">
+    <img src="arrow.png" alt="Scroll Up"> 
+  </div>
+
+  <header>
+    <a href="#welcome" class="logo">Jessamine <span>♡</span></a>
+
+    <!-- Navigation menu -->
+    <nav>
+      <a href="#welcome">Home</a>
+      <a href="#about">About</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#class-schedules">Class Schedules</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Welcome Section with a background video -->
+  <section class="welcome" id="welcome">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="welcome.mp4" type="video/mp4"> <!-- My background video -->
+    </video>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <h2 class="about-header">About Me</h2> <!-- Section heading -->
+
+    <div class="about">
+      <!-- Flip card with front and back image -->
+      <div class="square-flip">
+        <div class="square">
+          <div class="square-container">
+            <img src="aboutphotofront.jpg" alt="Front ID"> <!-- Front image of me or ID -->
+          </div>
+        </div>
+        <div class="square2">
+          <div class="square-container2">
+            <img src="aboutphotoback.jpg" alt="Back ID"> <!-- Back image of ID -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Text about me next to the flip card -->
+      <div class="about-text">
+        <h3 class="paragraph-title">Hi! I'm Jessamine</h3>
+        <p>
+          I am currently studying in Aces Polytechnic college Inc with bachelor of Science in Information Technology. This website shares more about my favorites, class schedules, and ways to contact me.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Favorites Section -->
+ <section class="favorites" id="favorites">
+  <h2>My Favorites 💜</h2>
+  <div class="fav-gallery">
+
+    <!-- First favorite image flip card -->
+    <div class="fav-flip img1">
+      <div class="fav-flip-inner">
+        <div class="fav-front">
+          <img src="favephoto1.jpg" alt="Favorite Image 1"> <!-- Front image -->
+        </div>
+        <div class="fav-back">
+          <img src="favephoto1.jpg" alt="Favorite Image 1"> <!-- Back image same as front -->
+          <div class="fav-text">
+            <p>This includes in my favorite photo because my pet was eating her favorite food</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUDIO flip card 1 -->
+    <div class="fav-flip audio1">
+      <div class="fav-flip-inner">
+        <div class="fav-front">
+          <img src="ariana1.jpg" alt="Audio Poster 1"> <!-- Poster/cover image -->
+        </div>
+        <div class="fav-back">
+          <img src="ariana1.jpg" alt="Audio Poster 1">
+          <div class="fav-text">
+            <audio controls>
+              <source src="Ariana Grande - supernatural (lyric visualizer).mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUDIO flip card 2 -->
+    <div class="fav-flip audio2">
+      <div class="fav-flip-inner">
+        <div class="fav-front">
+          <img src="ariana2.jpg" alt="Audio Poster 2">
+        </div>
+        <div class="fav-back">
+          <img src="ariana2.jpg" alt="Audio Poster 2">
+          <div class="fav-text">
+            <audio controls>
+              <source src="Ariana Grande - 7 rings (Official Video).mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Third favorite image flip card -->
+    <div class="fav-flip img3">
+      <div class="fav-flip-inner">
+        <div class="fav-front">
+          <img src="favephoto3.jpg" alt="Favorite Image 3">
+        </div>
+        <div class="fav-back">
+          <img src="favephoto3.jpg" alt="Favorite Image 3">
+          <div class="fav-text">
+            <p>This includes in my favorite photo because this was my favorite place</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fourth favorite image flip card -->
+    <div class="fav-flip img4">
+      <div class="fav-flip-inner">
+        <div class="fav-front">
+          <img src="favephoto4.jpg" alt="Favorite Image 4">
+        </div>
+        <div class="fav-back">
+          <img src="favephoto4.jpg" alt="Favorite Image 4">
+          <div class="fav-text">
+            <p>This includes in my favorite photo because this is my second pet</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- YouTube video flip card -->
+    <div class="fav-flip video">
+  <div class="fav-flip-inner">
+    <div class="fav-front">
+      <img src="favevideothumbnail.jpg" alt="Local Video Poster"> <!-- Front thumbnail -->
+    </div>
+    <div class="fav-back">
+      <video controls poster="" width="100%">
+        <source src="crazylittlething.mp4" type="video/mp4"> <!-- Local video file -->
+        Your browser does not support the video tag.
+      </video>
+      <div class="fav-text">
+        <p>🎬 My Favorite Video</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Existing music flip card -->
+    <div class="fav-flip music">
+      <div class="fav-flip-inner">
+        <div class="fav-front">
+          <img src="musicposter.jpg" alt="Singer Photo">
+        </div>
+        <div class="fav-back">
+          <img src="musicposter.jpg" alt="Singer Photo">
+          <div class="fav-text">
+            <audio controls>
+              <source src="The Script - The Man Who Can't Be Moved (Lyrics) - Copy.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Class Schedule Section -->
+  <section class="class-schedules" id="class-schedules">
+    <h2>My Class Schedules 🌸</h2>
+    <div class="schedule-container">
+
+      <!-- Left side: Weekly class schedule table -->
+      <div class="schedule-left">
+        <div class="schedule-table">
+
+          <caption>Weekly Class Schedule</caption> <!-- Title of the table -->
+
+          <!-- Table header: columns -->
+          <div class="table-header">
+            <div class="table-cell">Subject</div>
+            <div class="table-cell">Time</div>
+            <div class="table-cell">Room</div>
+          </div>
+
+          <!-- Each row is a class entry -->
+          <div class="table-row">
+            <div class="table-cell">Web System and Technologies</div>
+            <div class="table-cell">10:00 AM – 12:00 AM</div>
+            <div class="table-cell">Acer Lab</div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">Amm Eng</div>
+            <div class="table-cell">01:00 PM – 03:00 PM</div>
+            <div class="table-cell">AB108</div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">Human Interaction Computer</div>
+            <div class="table-cell">03:00 PM – 05:00 PM</div>
+            <div class="table-cell">ACAD 1</div>
+          </div>
+
+          <div class="table-row">
+            <div class="table-cell">DSA</div>
+            <div class="table-cell">05:30 PM – 07:30 PM</div>
+            <div class="table-cell">210</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right side: sticky notes for daily routine, hobbies, and programming -->
+      <div class="schedule-right">
+        <div class="sticky-note">
+          <h3>🎯 Daily Routine</h3>
+          <ol>
+            <li>Wake up early and eat breakfast</li>
+            <li>bath and skin care routine</li>
+            <li>Check quipper</li>
+            <li>Go to school 30 minutes before first class</li>
+          </ol>
+        </div>
+
+        <div class="sticky-note">
+          <h3>💜 My Hobbies</h3>
+          <ul>
+            <li>Bake pastries and cooking dishes</li>
+            <li>Listening to music</li>
+            <li>Watching western movies</li>
+            <li>Watch tiktok videos</li>
+          </ul>
+        </div>
+
+        <div class="sticky-note">
+          <h3>💻 Programming Languages I use</h3>
+          <dl>
+            <dt>HTML</dt>
+            <dd>Skeleton of a webpage.</dd>
+            <dt>CSS</dt>
+            <dd>Styles and layout of a page.</dd>
+            <dt>JavaScript</dt>
+            <dd>Adds interactivity & dynamic features.</dd>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+  </section>
+    <!-- Projects Section -->
+  <section class="projects-section" id="projects">
+    <h2>My Projects 🚀</h2>
+    <div class="project-boxes">
+
+      <!-- Project 1 -->
+      <a href="index.html" target="_blank" class="project-box">
+  <img src="Screenshot 2025-09-04 111620.png" alt="Bootstrap Project" class="project-img">
+  <h3>Bootstrap Project</h3>
+</a>
+
+      <!-- Project 2 -->
+      <a href="index1.html" target="_blank" class="project-box">
+  <img src="Screenshot 2025-09-04 111445.png" alt="Project 2" class="project-img">
+  <h3>Project 2</h3>
+</a>
+
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section class="contact-section" id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-boxes">
+
+      <!-- Phone box -->
+      <div class="contact-box phone">
+        <img src="telephonepic-removebg-preview.png" alt="Phone Icon" class="contact-img">
+        <h3>Phone</h3>
+        <p>+63 912 345 6789</p>
+      </div>
+
+      <!-- Email box -->
+      <div class="contact-box email">
+        <img src="emailpic-removebg-preview.png" alt="Email Icon" class="contact-img">
+        <h3>Email</h3>
+        <p>jessaminemarestila@email.com</p>
+      </div>
+
+      <!-- Location box with embedded Google map -->
+      <div class="contact-box location">
+        <h3>Location</h3>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.5621!2d125.656562!3d7.266624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f943fc63ba9585%3A0x336b5dcab113d97c!2sAlejandra%20Navarro%20(Lasang)%2C%20Davao%20City%2C%20Davao%20del%20Sur!5e0!3m2!1sen!2sph!4v1692872000000!5m2!1sen!2sph" 
+            width="100%" 
+            height="200" 
+            style="border:0; border-radius:10px;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Social media buttons -->
+    <div class="social-buttons">
+      <a href="https://www.facebook.com/sang.marestila" target="_blank" class="fb"><i class="bx bxl-facebook"></i></a>
+      <a href="https://instagram.com/yourprofile" target="_blank" class="insta"><i class="bx bxl-instagram"></i></a>
+      <a href="mailto:yourname@email.com" class="email"><i class="bx bx-envelope"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Jessamine | All Rights Reserved</p>
+  </footer>
+
+  <!-- Scroll up button JavaScript functionality -->
+  <script>
+    const scrollUpBtn = document.querySelector(".scroll-up-btn");
+
+    // Show scroll button after scrolling 300px
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollUpBtn.classList.add("show");
+      } else {
+        scrollUpBtn.classList.remove("show");
+      }
+    });
+
+    // Scroll smoothly to top when button clicked
+    scrollUpBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    window.addEventListener("scroll", function() {
+  const header = document.querySelector("header");
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+  </script>
+
+  <!-- Link to my external JavaScript file -->
+  <script src="jjss.js"></script>
+
+</body>
+</html>
