@@ -314,7 +314,7 @@ h2:hover {
     "img3 youtube img4"
     "img5 music img6";
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 160px 160px 140px;
+  grid-template-rows: 160px 160px 160px; /* made all rows equal height */
   gap: 15px;
   width: 95%;
   max-width: 950px;
@@ -360,12 +360,19 @@ h2:hover {
   overflow: hidden;
   backface-visibility: hidden;
   background: var(--card);
+  display: flex;               /* ensures content fits inside card */
+  flex-direction: column;
+  justify-content: flex-end;   /* keeps text/audio at bottom */
 }
 
 .fav-front img, .fav-back img { 
   width:100%; height:100%; object-fit:cover; 
 }
-.fav-back { transform: rotateY(180deg); position: relative; }
+
+.fav-back { 
+  transform: rotateY(180deg); 
+  position: relative; 
+}
 
 .fav-text {
   position: absolute;
@@ -380,6 +387,12 @@ h2:hover {
   font-size: 12px; /* smaller text */
   text-align: left;
   max-width: 85%;
+}
+
+.fav-back audio {
+  width: 100%;     /* make audio fit card width */
+  height: 35px;    /* fixed height for consistency */
+  display: block;
 }
 
 
@@ -780,4 +793,5 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
