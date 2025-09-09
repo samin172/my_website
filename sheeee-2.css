@@ -328,7 +328,11 @@ h2:hover {
 .img3 { grid-area: img3; } 
 .img4 { grid-area: img4; }
 .youtube { grid-area: youtube; }
-.music { grid-area: music; }
+.music { 
+  grid-area: music;
+  height: 120px; /* smaller music card height */
+}
+
 .img5 { grid-area: img5; }
 .img6 { grid-area: img6; }
 
@@ -367,6 +371,14 @@ h2:hover {
 }
 .fav-back { transform: rotateY(180deg); position: relative; }
 
+/* Music card specific audio styling */
+.fav-flip.music .fav-back audio {
+  width: 90%;      /* smaller player width */
+  height: 30px;    /* compact height */
+  margin: auto;
+  display: block;
+}
+
 .fav-text {
   position: absolute;
   bottom: 10px; /* move text to bottom */
@@ -381,7 +393,6 @@ h2:hover {
   text-align: left;
   max-width: 85%;
 }
-
 
 /* ===== Class Schedule Section ===== */
 .class-schedules { background: url("aboutbackground.jpg") no-repeat center center/cover; padding: 4rem 2rem; color: var(--text); }
@@ -780,3 +791,4 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
