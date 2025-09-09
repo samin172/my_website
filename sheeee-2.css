@@ -302,11 +302,13 @@ h2:hover {
 .favorites {
   position: relative;
   background: url('favorites_contact_bg.jpg') no-repeat center center/cover;
-  padding: 5rem 2rem;
+  padding: 2rem 2rem !important; /* smaller padding */
+  min-height: auto !important;    /* allow section to shrink */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 
 .fav-gallery {
   display: grid;
@@ -798,6 +800,7 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
 
 
