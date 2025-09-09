@@ -319,9 +319,9 @@ h2:hover {
   gap: 15px;
   width: 95%;
   max-width: 950px;
-  background: #d7b8f3; /* pastel purple container */
+  background: #d7b8f3;
   padding: 20px;
-  border-radius: 0px; /* sharp corners */
+  border-radius: 0px;
 }
 
 .img1 { grid-area: img1; } 
@@ -331,10 +331,10 @@ h2:hover {
 .youtube { grid-area: youtube; }
 .music { 
   grid-area: music;
-  justify-self: center; /* center horizontally */
-  align-self: center;   /* center vertically */
-  width: 90%;           /* make rectangle wider */
-  height: 70px;         /* music card height */
+  justify-self: center;
+  align-self: center;
+  width: 90%;
+  height: 70px;
 }
 .img5 { grid-area: img5; }
 .img6 { grid-area: img6; }
@@ -343,8 +343,8 @@ h2:hover {
   perspective: 1000px;
   width: 100%; 
   height: 100%;
-  border-radius: 0px; /* sharp edges */
-  box-shadow: 0 0 20px rgba(255,255,255,0.8); /* glow white */
+  border-radius: 0px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.8);
   transition: transform 0.4s ease, box-shadow 0.3s ease;
 }
 .fav-flip:hover { 
@@ -354,7 +354,8 @@ h2:hover {
 
 .fav-flip-inner {
   position: relative;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   transition: transform 0.8s ease;
   transform-style: preserve-3d;
 }
@@ -362,42 +363,47 @@ h2:hover {
 
 .fav-front, .fav-back {
   position: absolute;
-  width: 100%; height: 100%;
-  border-radius: 0px; /* sharp edges */
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
   overflow: hidden;
   backface-visibility: hidden;
   background: var(--card);
 }
 
 .fav-front img, .fav-back img { 
-  width:100%; height:100%; object-fit:cover; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
   display: block;
 }
 
+/* Back side layout */
 .fav-back {
   transform: rotateY(180deg);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.fav-text {
-  position: absolute;      /* overlay text */
-  bottom: 0;               /* stick to bottom */
-  left: 0;
-  right: 0;                /* full width */
+/* Full image remains, text and audio at bottom */
+.fav-back .fav-text {
+  position: relative; /* let it flow */
   background: rgba(0,0,0,0.55);
   color: #fff;
   font-weight: 500;
   padding: 6px 10px;
-  border-radius: 0 0 6px 6px; /* optional: rounded bottom corners */
-  font-size: 12px; /* smaller text */
-  text-align: center;  /* optional */
-  max-width: 100%;
+  border-radius: 0 0 6px 6px;
+  font-size: 12px;
+  text-align: center;
+  margin-top: auto; /* push it to bottom */
+  width: 100%;
 }
 
-/* Music audio player inside the back of the card */
+/* Audio player inside back */
 .fav-back audio {
-  width: 100%; 
-  height: 35px; 
+  width: 100%;
+  height: 35px;
   margin-top: 5px;
   border-radius: 5px;
 }
@@ -799,6 +805,7 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
 
 
