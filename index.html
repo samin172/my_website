@@ -300,48 +300,52 @@
 
 
   <!-- Contact Section -->
-  <section class="contact-section" id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact-boxes">
+<section class="contact-section" id="contact">
+  <h2>Contact Me</h2>
+  <div class="contact-boxes">
 
-      <!-- Phone box -->
-      <div class="contact-box phone">
-        <img src="tele.png" alt="Phone Icon" class="contact-img">
-        <h3>Phone</h3>
-        <p>+63 912 345 6789</p>
-      </div>
-
-      <!-- Email box -->
-      <div class="contact-box email">
-        <img src="emailpic-removebg-preview.png" alt="Email Icon" class="contact-img">
-        <h3>Email</h3>
-        <p>jessaminemarestila@email.com</p>
-      </div>
-
-      <!-- Location box with embedded Google map -->
-      <div class="contact-box location">
-        <h3>Location</h3>
-        <div class="map-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.5621!2d125.656562!3d7.266624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f943fc63ba9585%3A0x336b5dcab113d97c!2sAlejandra%20Navarro%20(Lasang)%2C%20Davao%20City%2C%20Davao%20del%20Sur!5e0!3m2!1sen!2sph!4v1692872000000!5m2!1sen!2sph" 
-            width="100%" 
-            height="200" 
-            style="border:0; border-radius:10px;" 
-            allowfullscreen="" 
-            loading="lazy">
-          </iframe>
-        </div>
-      </div>
-
+    <!-- Email box -->
+    <div class="contact-box email">
+      <img src="emailpic-removebg-preview.png" alt="Email Icon" class="contact-img">
+      <h3>Email</h3>
+      <p>jessaminemarestila@email.com</p>
     </div>
 
-    <!-- Social media buttons -->
-    <div class="social-buttons">
-      <a href="https://www.facebook.com/sang.marestila" target="_blank" class="fb"><i class="bx bxl-facebook"></i></a>
-      <a href="https://instagram.com/yourprofile" target="_blank" class="insta"><i class="bx bxl-instagram"></i></a>
-      <a href="mailto:yourname@email.com" class="email"><i class="bx bx-envelope"></i></a>
+    <!-- Location box with embedded Google map -->
+    <div class="contact-box location">
+      <h3>Location</h3>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.5621!2d125.656562!3d7.266624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f943fc63ba9585%3A0x336b5dcab113d97c!2sAlejandra%20Navarro%20(Lasang)%2C%20Davao%20City!5e0!3m2!1sen!2sph!4v1692872000000!5m2!1sen!2sph" 
+          width="100%" 
+          height="200" 
+          style="border:0; border-radius:10px;" 
+          allowfullscreen 
+          loading="lazy">
+        </iframe>
+      </div>
     </div>
-  </section>
+
+    <!-- Message Form (Right Side) -->
+    <div class="contact-box form">
+      <h3>Send me a message</h3>
+      <form action="mailto:jessaminemarestila@email.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Social media buttons -->
+  <div class="social-buttons">
+    <a href="https://www.facebook.com/sang.marestila" target="_blank" class="fb"><i class="bx bxl-facebook"></i></a>
+    <a href="https://instagram.com/yourprofile" target="_blank" class="insta"><i class="bx bxl-instagram"></i></a>
+    <a href="mailto:jessaminemarestila@email.com" class="email"><i class="bx bx-envelope"></i></a>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
@@ -383,6 +387,7 @@
 
 </body>
 </html>
+
 
 
 
