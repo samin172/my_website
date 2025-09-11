@@ -542,10 +542,10 @@ h2:hover {
 
 
 /* 🌸 Contact Section */
-.contact-section {
+.about-section {
+  background: url("aboutbackground.jpg") no-repeat center center/cover;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #fdf6ff, #f3e9ff);
-  text-align: center;
+  position: relative;
 }
 
 .contact-section h2 {
@@ -682,6 +682,7 @@ footer {
   font-size: 1rem;
   border-radius: 0; /* optional, if you want slightly rounded edges, use 12px */
 }
+
 
 
 
