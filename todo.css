@@ -1,0 +1,264 @@
+/* ===== Reset & Base Styles ===== */  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: url('todolistback.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ===== App Container ===== */
+.app-container > .btn-primary {
+  display: block;
+  margin: 0 auto 20px auto;
+  font-size: 16px;
+  padding: 12px 22px;
+  border-radius: 15px;
+  box-shadow: 0 0 12px rgba(255, 182, 193, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.app-container > .btn-primary:hover {
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.9), 
+              0 0 30px rgba(255, 182, 193, 0.8);
+  transform: scale(1.05);
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 40px;
+  font-weight: 800;
+  text-shadow: 2px 2px 8px rgba(255, 105, 180, 0.6), 
+               0 0 12px rgba(255, 182, 193, 0.9);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: #ffb6c1;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #ff8fa3;
+}
+
+.btn-edit {
+  background: #ff9ecf;
+  color: #fff;
+  margin: 5px;
+  box-shadow: 0 0 6px rgba(255, 182, 193, 0.6);
+}
+
+.btn-edit:hover {
+  background: #ff7bb7;
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.8);
+}
+
+.btn-delete {
+  background: #ff8e9e;
+  color: #fff;
+  margin: 5px;
+  box-shadow: 0 0 6px rgba(255, 182, 193, 0.6);
+}
+
+.btn-delete:hover {
+  background: #ff5e73;
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.8);
+}
+
+.btn-close {
+  background: #ffc1d6;
+  color: #fff;
+}
+
+.btn-close:hover {
+  background: #ff9ebf;
+}
+
+/* ===== Task List Grid ===== */
+.task-list {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+/* ===== Sticky Note Style ===== */
+.task-item {
+  background: #ffe4ec;
+  padding: 15px;
+  border-radius: 12px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15), 
+              0 0 12px rgba(255, 192, 203, 0.5);
+  transition: transform 0.2s, box-shadow 0.3s;
+  position: relative;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.task-item:nth-child(2n) {
+  background: #ffd6e0;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15), 
+              0 0 12px rgba(255, 182, 193, 0.5);
+}
+
+.task-item:nth-child(3n) {
+  background: #ffc2d6;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15), 
+              0 0 12px rgba(255, 160, 180, 0.5);
+}
+
+.task-item:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2), 
+              0 0 20px rgba(255, 105, 180, 0.7), 
+              0 0 30px rgba(255, 182, 193, 0.7);
+}
+
+/* ===== Paperclip Decoration (Right Side) ===== */
+.task-item::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  width: 20px;
+  height: 40px;
+  border: 3px solid #888;
+  border-radius: 12px;
+  transform: rotate(20deg);
+  background: transparent;
+}
+
+.task-item::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 21px;
+  width: 12px;
+  height: 28px;
+  border: 2px solid #888;
+  border-radius: 10px;
+  transform: rotate(20deg);
+  background: transparent;
+}
+
+/* ===== Task Text ===== */
+.task-title {
+  font-weight: 700;
+  font-size: 19px;
+  color: #333;
+  margin-bottom: 6px;
+  text-align: left;
+  font-family: "Quicksand", sans-serif;
+}
+
+.task-meta {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 4px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Quicksand", sans-serif;
+}
+
+.task-date {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.task-time {
+  font-size: 13px;
+  color: #666;
+  margin-left: 20px;
+}
+
+/* ===== Modal Styles ===== */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background: rgba(255, 245, 248, 0.95);
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  animation: popUp 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #444;
+  font-weight: 500;
+}
+
+/* Input & Textarea Styles (All Matching) */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #ffb6c1;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus {
+  border-color: #ff8fa3;
+  box-shadow: 0 0 8px rgba(255, 182, 193, 0.6);
+}
+
+/* ===== Animations ===== */
+@keyframes popUp {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
