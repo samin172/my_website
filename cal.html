@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cute Pink Calculator</title>
+  <link rel="stylesheet" href="cal.css">
+</head>
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="calculator.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Welcome Screen -->
+  <div class="container" id="welcome">
+    <h2>Welcome!</h2>
+    <p>Please choose an option to continue</p>
+    <div class="welcome-buttons">
+      <button onclick="showSignup()">Sign Up</button>
+      <button onclick="showLogin()">Login</button>
+    </div>
+  </div>
+
+  <!-- Login Screen -->
+  <div class="container" id="login" style="display:none;">
+    <h2>Login</h2>
+    <input type="text" id="login-username" placeholder="Enter Gmail">
+    <small class="hint">⚠️ Must be a valid Gmail address (example@gmail.com)</small>
+
+    <div class="input-group">
+      <input type="password" id="login-password" placeholder="Password">
+      <span class="eye-icon" onclick="togglePassword('login-password', this)">👁️</span>
+    </div>
+    <small class="hint">⚠️ Must contain lowercase, uppercase, digit, and symbol</small>
+
+    <div id="login-error" class="error"></div>
+    <button onclick="login()">Login</button>
+    <button onclick="goBack()">Back</button>
+  </div>
+
+  <!-- Sign Up Screen -->
+  <div class="container" id="signup" style="display:none;">
+    <h2>Sign Up</h2>
+    <input type="text" id="signup-username" placeholder="Enter Gmail">
+    <small class="hint">⚠️ Must be a valid Gmail address (example@gmail.com)</small>
+
+    <div class="input-group">
+      <input type="password" id="signup-password" placeholder="Password">
+      <span class="eye-icon" onclick="togglePassword('signup-password', this)">👁️</span>
+    </div>
+    <small class="hint">⚠️ Must contain lowercase, uppercase, digit, and symbol</small>
+
+    <div class="input-group">
+      <input type="password" id="signup-confirm" placeholder="Confirm Password">
+      <span class="eye-icon" onclick="togglePassword('signup-confirm', this)">👁️</span>
+    </div>
+    <small class="hint">⚠️ Must match the password above</small>
+
+    <div id="signup-error" class="error"></div>
+    <button onclick="signup()">Sign Up</button>
+    <button onclick="goBack()">Back</button>
+  </div>
+
+  <!-- Calculator Screen -->
+  <div class="container calc-container" id="calculator" style="display:none;">
+    <h2>Pink Calculator</h2>
+    <input type="text" class="calc-display" id="display" disabled>
+    <div class="buttons">
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button onclick="press('/')">÷</button>
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button onclick="press('*')">×</button>
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button onclick="press('-')">−</button>
+      <button onclick="press('0')">0</button>
+      <button onclick="press('.')">.</button>
+      <button class="equal" onclick="calculate()">=</button>
+      <button onclick="press('+')">+</button>
+      <button onclick="clearDisplay()">C</button>
+    </div>
+  </div>
+
+  <script src="cal.js"></script>
+</body>
+</html>
