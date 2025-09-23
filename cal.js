@@ -27,8 +27,8 @@ function validatePassword(password) {
   const upper = /[A-Z]/.test(password);
   const digit = /\d/.test(password);
   const special = /[^a-zA-Z0-9]/.test(password);
-
-  return lower && upper && digit && special;
+  const length = password.length >= 8; // require at least 8 chars
+  return lower && upper && digit && special && length;
 }
 
 function validateGmail(email) {
@@ -44,16 +44,19 @@ function login() {
   const error = document.getElementById("login-error");
 
   if (username === "" || password === "") {
+    alert("Please fill out all fields! ⚠️");
     error.textContent = "⚠️ Please fill out all fields.";
     return;
   }
 
   if (!validateGmail(username)) {
+    alert("Username must be a valid Gmail address (example@gmail.com). ⚠️");
     error.textContent = "⚠️ Username must be a valid Gmail address.";
     return;
   }
 
   if (!validatePassword(password)) {
+    alert("Password must be at least 8 characters and include lowercase, uppercase, digit, and symbol. ⚠️");
     error.textContent = "⚠️ Password must contain: Lowercase, Uppercase, Digit, Symbol.";
     return;
   }
@@ -74,21 +77,25 @@ function signup() {
   const error = document.getElementById("signup-error");
 
   if (username === "" || password === "" || confirm === "") {
+    alert("Please fill out all fields! ⚠️");
     error.textContent = "⚠️ Please fill out all fields.";
     return;
   }
 
   if (!validateGmail(username)) {
+    alert("Username must be a valid Gmail address (example@gmail.com). ⚠️");
     error.textContent = "⚠️ Username must be a valid Gmail address.";
     return;
   }
 
   if (!validatePassword(password)) {
+    alert("Password must be at least 8 characters and include lowercase, uppercase, digit, and symbol. ⚠️");
     error.textContent = "⚠️ Password must contain: Lowercase, Uppercase, Digit, Symbol.";
     return;
   }
 
   if (password !== confirm) {
+    alert("Passwords do not match! ⚠️");
     error.textContent = "⚠️ Passwords do not match.";
     return;
   }
@@ -117,6 +124,7 @@ function calculate() {
 function clearDisplay() {
   document.getElementById("display").value = "";
 }
+
 function togglePassword(id, el) {
   const input = document.getElementById(id);
   if (input.type === "password") {
