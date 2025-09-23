@@ -1,4 +1,4 @@
-/* ===== Reset & Base Styles ===== */  
+/* ===== Reset & Base Styles ===== */   
 * {
   margin: 0;
   padding: 0;
@@ -95,6 +95,19 @@ h1 {
   background: #ff9ebf;
 }
 
+/* ===== Done Button ===== */
+.btn-done {
+  background: #8ed081;
+  color: #fff;
+  margin: 5px;
+  box-shadow: 0 0 6px rgba(144, 238, 144, 0.6);
+}
+
+.btn-done:hover {
+  background: #6fb864;
+  box-shadow: 0 0 12px rgba(144, 238, 144, 0.8);
+}
+
 /* ===== Task List Grid ===== */
 .task-list {
   margin-top: 25px;
@@ -118,6 +131,13 @@ h1 {
   transition: transform 0.2s, box-shadow 0.3s;
   position: relative;
   animation: fadeIn 0.5s ease-in;
+}
+
+.task-item.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+  transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .task-item:nth-child(2n) {
