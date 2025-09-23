@@ -1,4 +1,4 @@
-/* ===== Reset & Base Styles ===== */   
+/* ===== Reset & Base Styles ===== */    
 * {
   margin: 0;
   padding: 0;
@@ -62,30 +62,6 @@ h1 {
   background: #ff8fa3;
 }
 
-.btn-edit {
-  background: #ff9ecf;
-  color: #fff;
-  margin: 5px;
-  box-shadow: 0 0 6px rgba(255, 182, 193, 0.6);
-}
-
-.btn-edit:hover {
-  background: #ff7bb7;
-  box-shadow: 0 0 12px rgba(255, 105, 180, 0.8);
-}
-
-.btn-delete {
-  background: #ff8e9e;
-  color: #fff;
-  margin: 5px;
-  box-shadow: 0 0 6px rgba(255, 182, 193, 0.6);
-}
-
-.btn-delete:hover {
-  background: #ff5e73;
-  box-shadow: 0 0 12px rgba(255, 105, 180, 0.8);
-}
-
 .btn-close {
   background: #ffc1d6;
   color: #fff;
@@ -95,17 +71,55 @@ h1 {
   background: #ff9ebf;
 }
 
-/* ===== Done Button ===== */
+/* ===== Done, Edit, Delete Buttons (Smaller + aligned) ===== */
+.task-item .task-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.task-item .task-actions .btn {
+  padding: 5px 10px;       /* smaller buttons */
+  font-size: clamp(11px, 2vw, 13px);
+  flex: 1;
+  margin: 0 3px;           /* spacing between buttons */
+}
+
+/* Done Button */
 .btn-done {
   background: #8ed081;
   color: #fff;
-  margin: 5px;
-  box-shadow: 0 0 6px rgba(144, 238, 144, 0.6);
+  box-shadow: 0 0 4px rgba(144, 238, 144, 0.6);
 }
 
 .btn-done:hover {
   background: #6fb864;
-  box-shadow: 0 0 12px rgba(144, 238, 144, 0.8);
+  box-shadow: 0 0 8px rgba(144, 238, 144, 0.8);
+}
+
+/* Edit Button */
+.btn-edit {
+  background: #ff9ecf;
+  color: #fff;
+  box-shadow: 0 0 4px rgba(255, 182, 193, 0.6);
+}
+
+.btn-edit:hover {
+  background: #ff7bb7;
+  box-shadow: 0 0 8px rgba(255, 105, 180, 0.8);
+}
+
+/* Delete Button */
+.btn-delete {
+  background: #ff8e9e;
+  color: #fff;
+  box-shadow: 0 0 4px rgba(255, 182, 193, 0.6);
+}
+
+.btn-delete:hover {
+  background: #ff5e73;
+  box-shadow: 0 0 8px rgba(255, 105, 180, 0.8);
 }
 
 /* ===== Task List Grid ===== */
@@ -298,5 +312,10 @@ input:focus, textarea:focus {
 
   .task-item {
     min-height: 140px;
+  }
+
+  .task-item .task-actions {
+    flex-direction: column;   /* stack buttons on small screens */
+    gap: 5px;
   }
 }
