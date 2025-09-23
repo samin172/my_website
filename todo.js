@@ -46,19 +46,24 @@ function saveTask() {
   }
 
   if (editIndex !== null) {
-    tasks[editIndex] = { title, desc, date, time };
+    tasks[editIndex] = { ...tasks[editIndex], title, desc, date, time };
   } else {
-    tasks.push({ title, desc, date, time });
+    tasks.push({ title, desc, date, time, done: false });
   }
   renderTasks();
   closeModal();
+}
+
+function toggleDone(index) {
+  tasks[index].done = !tasks[index].done;
+  renderTasks();
 }
 
 function renderTasks() {
   taskList.innerHTML = "";
   tasks.forEach((task, index) => {
     const div = document.createElement("div");
-    div.className = "task-item";
+    div.className = "task-item" + (task.done ? " completed" : "");
     div.innerHTML = `
       <div>
         <div class="task-title">${task.title}</div>
@@ -66,6 +71,7 @@ function renderTasks() {
         <div class="task-meta">📅 ${task.date || "No date"} ⏰ ${task.time || "No time"}</div>
       </div>
       <div style="margin-top:10px;">
+        <button class="btn btn-done" onclick="toggleDone(${index})">${task.done ? "Undo" : "Done"}</button>
         <button class="btn btn-edit" onclick="openModal(true, ${index})">Edit</button>
         <button class="btn btn-delete" onclick="openDeleteModal(${index})">Delete</button>
       </div>
