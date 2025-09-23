@@ -74,16 +74,16 @@ h1 {
 /* ===== Done, Edit, Delete Buttons (Smaller + aligned) ===== */
 .task-item .task-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* left, center, right alignment */
   width: 100%;
   margin-top: 10px;
+  gap: 5px; /* spacing between buttons */
 }
 
 .task-item .task-actions .btn {
   padding: 5px 10px;       /* smaller buttons */
   font-size: clamp(11px, 2vw, 13px);
-  flex: 1;
-  margin: 0 3px;           /* spacing between buttons */
+  flex: 0 0 auto;          /* do NOT stretch buttons */
 }
 
 /* Done Button */
