@@ -70,10 +70,10 @@ function renderTasks() {
         <div class="task-meta">${task.desc || ""}</div>
         <div class="task-meta">📅 ${task.date || "No date"} ⏰ ${task.time || "No time"}</div>
       </div>
-      <div style="margin-top:10px;">
+      <div class="task-actions">
         <button class="btn btn-done" onclick="toggleDone(${index})">${task.done ? "Undo" : "Done"}</button>
-        <button class="btn btn-edit" onclick="openModal(true, ${index})">Edit</button>
         <button class="btn btn-delete" onclick="openDeleteModal(${index})">Delete</button>
+        <button class="btn btn-edit" onclick="openModal(true, ${index})">Edit</button>
       </div>
     `;
     taskList.appendChild(div);
