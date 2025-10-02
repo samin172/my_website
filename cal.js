@@ -1,5 +1,5 @@
 // ==========================
-// Navigation Between Screens
+// Navigation
 // ==========================
 function showLogin() {
   document.getElementById("welcome").style.display = "none";
@@ -20,15 +20,17 @@ function goBack() {
 }
 
 // ==========================
-// Validation Functions
+// Validation
 // ==========================
 function validatePassword(password) {
-  const lower = /[a-z]/.test(password);
-  const upper = /[A-Z]/.test(password);
-  const digit = /\d/.test(password);
-  const special = /[^a-zA-Z0-9]/.test(password);
-  const length = password.length >= 8; // require at least 8 chars
-  return lower && upper && digit && special && length;
+  const checks = {
+    lower: /[a-z]/.test(password),
+    upper: /[A-Z]/.test(password),
+    digit: /\d/.test(password),
+    special: /[^a-zA-Z0-9]/.test(password),
+    length: password.length >= 8
+  };
+  return checks;
 }
 
 function validateGmail(email) {
@@ -36,7 +38,57 @@ function validateGmail(email) {
 }
 
 // ==========================
-// Login
+// Password Strength Bar
+// ==========================
+function checkPasswordStrength() {
+  const password = document.getElementById("signup-password").value;
+  const strengthBar = document.getElementById("strength-bar");
+  const strengthText = document.getElementById("strength-text");
+
+  const checks = validatePassword(password);
+  const total = Object.keys(checks).length;
+  const passed = Object.values(checks).filter(v => v).length;
+
+  // Fill bar by percentage
+  const percent = (passed / total) * 100;
+  strengthBar.style.width = percent + "%";
+
+  // Bar color
+  if (percent === 100) strengthBar.style.background = "#4caf50";
+  else if (percent >= 60) strengthBar.style.background = "#ffd700"; // yellow
+  else strengthBar.style.background = "#ff4d6d"; // red
+
+  // Text hint
+  const missing = [];
+  if (!checks.length) missing.push("8 chars");
+  if (!checks.upper) missing.push("uppercase");
+  if (!checks.lower) missing.push("lowercase");
+  if (!checks.digit) missing.push("digit");
+  if (!checks.special) missing.push("symbol");
+
+  if (missing.length === 0) {
+    strengthText.textContent = "✅ Password meets all requirements!";
+  } else {
+    strengthText.textContent = "⚠️ Missing: " + missing.join(", ");
+  }
+}
+
+// ==========================
+// Toggle Password Visibility
+// ==========================
+function togglePassword(id, el) {
+  const input = document.getElementById(id);
+  if (input.type === "password") {
+    input.type = "text";
+    el.textContent = "🙈";
+  } else {
+    input.type = "password";
+    el.textContent = "👁️";
+  }
+}
+
+// ==========================
+// Login & Signup
 // ==========================
 function login() {
   const username = document.getElementById("login-username").value.trim();
@@ -44,32 +96,26 @@ function login() {
   const error = document.getElementById("login-error");
 
   if (username === "" || password === "") {
-    alert("Please fill out all fields! ⚠️");
     error.textContent = "⚠️ Please fill out all fields.";
     return;
   }
 
   if (!validateGmail(username)) {
-    alert("Username must be a valid Gmail address (example@gmail.com). ⚠️");
     error.textContent = "⚠️ Username must be a valid Gmail address.";
     return;
   }
 
-  if (!validatePassword(password)) {
-    alert("Password must be at least 8 characters and include lowercase, uppercase, digit, and symbol. ⚠️");
-    error.textContent = "⚠️ Password must contain: Lowercase, Uppercase, Digit, Symbol.";
+  const checks = validatePassword(password);
+  if (Object.values(checks).includes(false)) {
+    error.textContent = "⚠️ Password must contain: Lowercase, Uppercase, Digit, Symbol, 8 chars.";
     return;
   }
 
-  // Success → go to calculator
   error.textContent = "";
   document.getElementById("login").style.display = "none";
   document.getElementById("calculator").style.display = "block";
 }
 
-// ==========================
-// Sign Up
-// ==========================
 function signup() {
   const username = document.getElementById("signup-username").value.trim();
   const password = document.getElementById("signup-password").value;
@@ -77,37 +123,33 @@ function signup() {
   const error = document.getElementById("signup-error");
 
   if (username === "" || password === "" || confirm === "") {
-    alert("Please fill out all fields! ⚠️");
     error.textContent = "⚠️ Please fill out all fields.";
     return;
   }
 
   if (!validateGmail(username)) {
-    alert("Username must be a valid Gmail address (example@gmail.com). ⚠️");
     error.textContent = "⚠️ Username must be a valid Gmail address.";
     return;
   }
 
-  if (!validatePassword(password)) {
-    alert("Password must be at least 8 characters and include lowercase, uppercase, digit, and symbol. ⚠️");
-    error.textContent = "⚠️ Password must contain: Lowercase, Uppercase, Digit, Symbol.";
+  const checks = validatePassword(password);
+  if (Object.values(checks).includes(false)) {
+    error.textContent = "⚠️ Password must contain: Lowercase, Uppercase, Digit, Symbol, 8 chars.";
     return;
   }
 
   if (password !== confirm) {
-    alert("Passwords do not match! ⚠️");
     error.textContent = "⚠️ Passwords do not match.";
     return;
   }
 
-  // Success → go to calculator
   error.textContent = "";
   document.getElementById("signup").style.display = "none";
   document.getElementById("calculator").style.display = "block";
 }
 
 // ==========================
-// Calculator Logic
+// Calculator
 // ==========================
 function press(value) {
   document.getElementById("display").value += value;
@@ -123,15 +165,4 @@ function calculate() {
 
 function clearDisplay() {
   document.getElementById("display").value = "";
-}
-
-function togglePassword(id, el) {
-  const input = document.getElementById(id);
-  if (input.type === "password") {
-    input.type = "text";
-    el.textContent = "🙈";
-  } else {
-    input.type = "password";
-    el.textContent = "👁️";
-  }
 }
