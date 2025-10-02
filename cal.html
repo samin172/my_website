@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cute Pink Calculator</title>
+  <title>Cute Pink Calculator with SignUp</title>
   <link rel="stylesheet" href="cal.css">
 </head>
 <body>
@@ -47,10 +47,16 @@
     <small class="hint">⚠️ Must be a valid Gmail address (example@gmail.com)</small>
 
     <div class="input-group">
-      <input type="password" id="signup-password" placeholder="Password">
+      <input type="password" id="signup-password" placeholder="Password" oninput="checkPasswordStrength()">
       <span class="eye-icon" onclick="togglePassword('signup-password', this)">👁️</span>
     </div>
-    <small class="hint">⚠️ Must contain lowercase, uppercase, digit, and symbol</small>
+    <!-- Password Strength Bar -->
+    <div class="password-strength">
+      <div id="strength-bar"></div>
+    </div>
+    <small id="strength-text" class="hint">
+      ⚠️ Password must be at least 8 characters, include uppercase, lowercase, digit, and symbol
+    </small>
 
     <div class="input-group">
       <input type="password" id="signup-confirm" placeholder="Confirm Password">
